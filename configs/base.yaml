@@ -1,0 +1,45 @@
+project:
+  name: "MolBind"
+  seed: 42
+
+data:
+  raw_file: "data/raw/BindingDB.tsv"
+  processed_file: "data/processed/bindingdb_pkd.parquet"
+
+  max_protein_length: 1024
+
+  min_pkd: 3.0
+  max_pkd: 14.0
+
+  test_size: 0.15
+  validation_size: 0.15
+
+model:
+  molecule:
+    hidden_dim: 128
+    heads: 4
+    output_dim: 256
+
+  protein:
+    embedding_dim: 128
+    num_heads: 8
+    num_layers: 3
+    feedforward_dim: 512
+    output_dim: 256
+    dropout: 0.1
+
+  fusion:
+    hidden_dim: 512
+    dropout: 0.2
+
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.0003
+  weight_decay: 0.00001
+  patience: 8
+  num_workers: 0
+
+paths:
+  checkpoint: "reports/best_model.pt"
+  metrics: "reports/metrics.json"

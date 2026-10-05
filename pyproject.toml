@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "molbind"
+version = "0.1.0"
+description = "Deep learning for molecule-protein binding affinity prediction"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "scikit-learn>=1.5",
+    "scipy>=1.13",
+    "matplotlib>=3.9",
+    "pyyaml>=6.0",
+    "tqdm>=4.66",
+    "rdkit>=2025.3",
+    "torch>=2.6",
+    "torch-geometric>=2.7",
+    "pyarrow>=17.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
