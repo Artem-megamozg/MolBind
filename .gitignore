@@ -1,0 +1,31 @@
+# PyCharm
+.idea/
+
+# Dataset
+data/
+
+# Reports and generated results
+reports/
+
+# Python package metadata
+src/molbind.egg-info/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Build artifacts
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
