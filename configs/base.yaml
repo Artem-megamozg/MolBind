@@ -3,10 +3,10 @@ project:
   seed: 42
 
 data:
-  raw_file: "data/raw/BindingDB.tsv"
+  raw_file: "data/raw/BindingDB_All.tsv"
   processed_file: "data/processed/bindingdb_pkd.parquet"
 
-  max_protein_length: 1024
+  max_protein_length: 512
 
   min_pkd: 3.0
   max_pkd: 14.0
@@ -33,13 +33,15 @@ model:
     dropout: 0.2
 
 training:
-  batch_size: 32
-  epochs: 50
+  batch_size: 4
+  epochs: 30
   learning_rate: 0.0003
   weight_decay: 0.00001
-  patience: 8
+  patience: 7
   num_workers: 0
+  gradient_clip: 1.0
 
 paths:
   checkpoint: "reports/best_model.pt"
   metrics: "reports/metrics.json"
+  history: "reports/training_history.json"
